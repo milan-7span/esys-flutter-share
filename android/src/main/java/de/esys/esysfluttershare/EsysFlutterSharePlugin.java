@@ -119,7 +119,7 @@ public class EsysFlutterSharePlugin implements FlutterPlugin, MethodCallHandler 
 
         shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, contentUris);
         // add optional text
-        if (!text.isEmpty()) shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+//        if (!text.isEmpty()) shareIntent.putExtra(Intent.EXTRA_TEXT, text);
 
         Intent chooserIntent = Intent.createChooser(shareIntent, title);
 
