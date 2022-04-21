@@ -42,7 +42,7 @@ class Share {
       'title': '$title',
       'names': files.entries.toList().map((x) => x.key).toList(),
       'mimeType': mimeType,
-      'text': '$text'
+      // 'text': '$text'
     };
 
     final tempDir = await getTemporaryDirectory();
@@ -52,6 +52,8 @@ class Share {
       await file.writeAsBytes(entry.value);
     }
 
+    Map textMap = <String, dynamic>{'text' : text};
+    argsMap.addEntries(textMap);
     _channel.invokeMethod('files', argsMap);
   }
 }
