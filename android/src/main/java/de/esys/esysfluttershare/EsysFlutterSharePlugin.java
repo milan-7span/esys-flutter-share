@@ -112,6 +112,7 @@ public class EsysFlutterSharePlugin implements FlutterPlugin, MethodCallHandler 
         Context activeContext = binding.getApplicationContext();
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND_MULTIPLE);
+        if (!text.isEmpty()) shareIntent.putExtra(Intent.EXTRA_TEXT, text);
         shareIntent.setType(mimeType);
 
         ArrayList<Uri> contentUris = new ArrayList<>();
@@ -119,7 +120,6 @@ public class EsysFlutterSharePlugin implements FlutterPlugin, MethodCallHandler 
 
         shareIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, contentUris);
         // add optional text
-//        if (!text.isEmpty()) shareIntent.putExtra(Intent.EXTRA_TEXT, text);
 
         Intent chooserIntent = Intent.createChooser(shareIntent, title);
 
@@ -132,7 +132,6 @@ public class EsysFlutterSharePlugin implements FlutterPlugin, MethodCallHandler 
         }
 
         chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
         activeContext.startActivity(chooserIntent);
     }
 
