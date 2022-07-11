@@ -1,4 +1,4 @@
-package de.esys.esysfluttershare_example;
+package de.esys.esysfluttershareexample;
 
 import io.flutter.embedding.android.FlutterActivity;
 

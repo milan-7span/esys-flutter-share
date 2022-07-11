@@ -53,7 +53,7 @@ class Share {
     }
 
     Map textMap = <String, dynamic>{'text' : text};
-    argsMap.update('text', (value) => textMap);
+    argsMap.update('text', (value) => textMap,ifAbsent: ()=> 'text');
     _channel.invokeMethod('files', argsMap);
   }
 }
