@@ -37,7 +37,7 @@ class Share {
 
   /// Sends multiple files to other apps.
   static Future<void> files(
-      String title, Map<String, List<int>> files, String mimeType, {String text = ''}) async {
+      String title, Map<String, List<int>> files, String mimeType, {String addedText = ''}) async {
     Map argsMap = <String, dynamic>{
       'title': '$title',
       'names': files.entries.toList().map((x) => x.key).toList(),
@@ -52,8 +52,8 @@ class Share {
       await file.writeAsBytes(entry.value);
     }
 
-    Map textMap = <String, dynamic>{'text' : text};
-    argsMap.update('text', (value) => textMap,ifAbsent: ()=> 'text');
-    _channel.invokeMethod('files', argsMap);
+    Map textMap = <String, dynamic>{"text" : addedText};
+    argsMap.update("text", (value) => textMap,ifAbsent: ()=> "text");
+    _channel.invokeMethod("files", argsMap);
   }
 }
