@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'addresses.csv': bytes3.buffer.asUint8List(),
           },
           '*/*',
-          addedText: 'My optional text.');
+          text: 'My optional text.');
     } catch (e) {
       print('error: $e');
     }
