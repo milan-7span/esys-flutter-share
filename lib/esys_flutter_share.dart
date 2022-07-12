@@ -39,12 +39,12 @@ class Share {
   /// Sends multiple files to other apps.
   static Future<void> files(
       String title, Map<String, List<int>> files, String mimeType,
-      {String text = ''}) async {
+      {String addedText = ''}) async {
     Map argsMap = <String, dynamic>{
       'title': '$title',
       'names': files.entries.toList().map((x) => x.key).toList(),
       'mimeType': mimeType,
-      // 'text': '$text'
+      'text': '$addedText'
     };
 
     final tempDir = await getTemporaryDirectory();
@@ -54,8 +54,7 @@ class Share {
       await file.writeAsBytes(entry.value);
     }
 
-    Map textMap = <String, dynamic>{"text": text};
-    argsMap.update("text", (value) => textMap, ifAbsent: () => text);
+    argsMap.update('text', (value) => addedText);
     _channel.invokeMethod("files", argsMap);
   }
 }

@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'esys.png': bytes1.buffer.asUint8List(),
             'bluedan.png': bytes2.buffer.asUint8List(),
           },
-          'image/png');
+          'image/png',addedText: 'Added');
     } catch (e) {
       print('error: $e');
     }
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             'addresses.csv': bytes3.buffer.asUint8List(),
           },
           '*/*',
-          text: 'My optional text.');
+          addedText: 'My optional text.');
     } catch (e) {
       print('error: $e');
     }
