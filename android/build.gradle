@@ -1,4 +1,4 @@
-package android`
+package android
 
 group 'de.esys.esysfluttershare'
 version '1.0-SNAPSHOT'
