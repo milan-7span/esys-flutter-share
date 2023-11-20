@@ -22,7 +22,6 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    namespace 'de.esys.esysfluttershare'
     compileSdkVersion 33
 
     defaultConfig {
