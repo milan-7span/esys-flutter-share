@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="de.esys.esysfluttershare">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
         <provider
